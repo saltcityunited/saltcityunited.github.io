@@ -109,3 +109,20 @@ a:hover {
     border-color: #555555; /* Grey borders */
 }
 
+/* Make embedded videos responsive */
+.ratio {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+}
+
+.ratio iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
