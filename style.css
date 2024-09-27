@@ -126,3 +126,17 @@ a:hover {
     border: 0;
 }
 
+/* Initial state: Chant cards are invisible and moved down */
+.card {
+    opacity: 0;
+    transform: translateY(50px); /* Move down */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Animation for smooth effect */
+}
+
+/* When the card is in view, it becomes visible and slides up */
+.fade-in {
+    opacity: 1;
+    transform: translateY(0); /* Move back to its original position */
+}
+
+
