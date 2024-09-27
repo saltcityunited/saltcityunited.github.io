@@ -10,7 +10,7 @@ function revealChants() {
             }
         });
     }, {
-        threshold: 0.1 // Chant card must be at least 10% visible to trigger
+        threshold: 0.05 // Chant card must be at least 10% visible to trigger
     });
 
     chants.forEach(chant => {
