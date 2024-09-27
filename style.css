@@ -145,6 +145,12 @@ a:hover {
     transform: translateY(0); /* Move back to its original position */
 }
 
+.carousel-item img {
+    max-height: 500px;  /* Set a maximum height for the images */
+    object-fit: cover;  /* Ensure images maintain their aspect ratio */
+    border-radius: 8px; /* Optional: Rounded corners */
+}
+
 
 
 .unifrakturmaguntia-regular {
