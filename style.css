@@ -11,6 +11,9 @@ body {
 .navbar {
     background-color: #000000; /* Black navbar */
     border-bottom: 1px solid #555555; /* Grey border */
+    position: sticky; /* Makes the navbar sticky */
+    top: 0; /* Sticks the navbar to the top */
+    z-index: 1000; /* Ensures the navbar is above other content */
 }
 
 .navbar-brand {
