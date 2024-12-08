@@ -1,10 +1,21 @@
+.unifrakturmaguntia-regular {
+    font-family: "UnifrakturMaguntia", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .medievalsharp-regular {
+    font-family: "MedievalSharp", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+
 /* General styles */
 body {
     background-color: #000000; /* Black background */
     color: #ffffff; /* White text */
     font-family: "Poppins", sans-serif;
-        text-align: center;
-
+    text-align: center;
 }
 
 /* Navbar */
@@ -156,18 +167,37 @@ a:hover {
 }
 
 
+/* Video Background Styling for Shop Page */
+.shop-page .video-container .video-background {
+    position: fixed; /* Fixes the video in place */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the entire page */
+    opacity: 0.4; /* Makes the video semi-transparent */
+    z-index: -1; /* Keeps the video behind other content */
+}
 
-.unifrakturmaguntia-regular {
-    font-family: "UnifrakturMaguntia", cursive;
-    font-weight: 400;
-    font-style: normal;
-  }
+/* Additional content styling to ensure text visibility over the video */
+.shop-page .video-container {
+    position: relative;
+    z-index: 1; /* Ensures the content is above the video */
+}
 
-  .medievalsharp-regular {
-    font-family: "MedievalSharp", cursive;
-    font-weight: 400;
-    font-style: normal;
-  }
+/* Center the text on the shop page */
+.shop-page .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Footer Styling */
+footer {
+    background-color: black !important; /* Forces the background color to be black */
+    color: white; /* Ensures the text is white for contrast */
+    position: relative; /* Ensures it is not affected by video position */
+    z-index: 2; /* Makes sure the footer stays above any background video */
+}
   
 
 
