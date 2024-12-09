@@ -10,6 +10,14 @@
     font-style: normal;
   }
 
+  @media (max-width: 992px) { /* Target mobile and tablet sizes */
+    .navbar-toggler {
+        order: -1; /* Moves the toggle button to the left */
+        margin-right: auto; /* Ensures spacing is consistent */
+    }
+}
+
+
 /* General styles */
 body {
     background-color: #000000; /* Black background */
@@ -192,6 +200,7 @@ a:hover {
     color: #fff; /* Text visibility */
 }
 
+
 /* Footer Styling */
 footer {
     background-color: black !important; /* Forces the background color to be black */
@@ -199,6 +208,7 @@ footer {
     position: relative; /* Ensures it is not affected by video position */
     z-index: 2; /* Makes sure the footer stays above any background video */
 }
-  
+
+
 
 
