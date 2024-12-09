@@ -2,21 +2,234 @@
     font-family: "UnifrakturMaguntia", cursive;
     font-weight: 400;
     font-style: normal;
-  }
+}
 
-  .medievalsharp-regular {
+.medievalsharp-regular {
     font-family: "MedievalSharp", cursive;
     font-weight: 400;
     font-style: normal;
-  }
+}
 
-  @media (max-width: 992px) { /* Target mobile and tablet sizes */
+@media (max-width: 992px) { /* Target mobile and tablet sizes */
     .navbar-toggler {
         order: -1; /* Moves the toggle button to the left */
         margin-right: auto; /* Ensures spacing is consistent */
     }
 }
 
+/* Keep the 3 lines the same but add a black border around the hamburger menu */
+.navbar-toggler {
+    border: 2px solid black !important; /* Set a black border around the hamburger button */
+}
+
+/* Add this to your stylesheet */
+.navbar-collapse {
+    position: fixed;
+    top: 0;
+    left: -250px;  /* Initially hidden off-screen */
+    width: 250px;  /* Width of the navbar */
+    height: 100vh;  /* Full height */
+    background-color: black;  /* Background color */
+    transition: left 0.3s ease-in-out;  /* Smooth sliding transition */
+}
+
+/* Hide the checkbox */
+.menu-toggle-checkbox {
+    display: none;
+}
+
+/* Navbar styles */
+.navbar-collapse {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Initially position off-screen */
+    width: 250px;
+    height: 100%;
+    background-color: black;
+    transition: left 0.3s ease-in-out;
+    z-index: 999;
+    padding-top: 20px;
+    padding-right: 10px;
+}
+
+/* When the checkbox is checked, slide the navbar in */
+.menu-toggle-checkbox:checked ~ .navbar-collapse {
+    left: 0;
+}
+
+/* When the menu is open (checkbox checked), show the close button */
+.menu-toggle-checkbox:checked ~ .navbar-collapse .close-btn {
+    display: block; /* Show the close button */
+}
+
+
+/* Close Button Styles */
+.close-btn {
+    display: none; /* Hide by default */
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 2rem;
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    z-index: 1001; /* Ensure it’s above the navbar */
+}
+
+/* Toggle Button (Hamburger) Styles */
+.navbar-toggler {
+    display: block;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+}
+
+.navbar-toggler-icon {
+    background-color: white;
+    width: 30px;
+    height: 3px;
+    position: relative;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+    content: '';
+    background-color: white;
+    width: 30px;
+    height: 3px;
+    position: absolute;
+    left: 0;
+    transition: transform 0.3s ease;
+}
+
+.navbar-toggler-icon::before {
+    top: -10px;
+}
+
+.navbar-toggler-icon::after {
+    bottom: -10px;
+}
+
+/* When the menu is open (checkbox checked), toggle the hamburger icon */
+.menu-toggle-checkbox:checked ~ .navbar-collapse .navbar-toggler-icon::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.menu-toggle-checkbox:checked ~ .navbar-collapse .navbar-toggler-icon::after {
+    transform: rotate(-45deg);
+    bottom: 0;
+}
+
+.menu-toggle-checkbox:checked ~ .navbar-collapse .navbar-toggler-icon {
+    background-color: transparent;
+}
+
+/* Navbar items styles */
+.navbar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item {
+    padding: 1rem;
+    text-align: center;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: block;
+}
+
+.navbar-toggler {
+    display: block;
+    cursor: pointer;
+}
+
+/* Ensure the navbar collapses properly on mobile */
+@media (max-width: 992px) {
+    .navbar-collapse {
+        left: -250px; /* Keep it hidden off-screen when collapsed */
+        border-right: 1px solid #555555; /* Grey border */
+    }
+
+    .navbar-toggler {
+        display: block; /* Show the hamburger toggle button */
+    }
+
+    .navbar-collapse.show {
+        left: 0; /* Slide in when toggled */
+    }
+}
+
+/* For large screens, reset the navbar */
+@media (min-width: 992px) {
+    .navbar-collapse {
+        position: static;
+        width: auto;
+        height: auto;
+    }
+
+    .navbar-toggler {
+        display: none; /* Hide the toggle button on large screens */
+    }
+}
+
+/* Styles for navbar items */
+.navbar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item {
+    padding: 1rem;
+    text-align: center;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: block;
+}
+
+.nav-link.active {
+    color: #333; /* Darker color for active link */
+}
+
+/* Ensure the navbar collapses properly on mobile */
+@media (max-width: 992px) {
+    .navbar-collapse {
+        left: -250px; /* Keep it hidden off-screen when collapsed */
+        border-right: 1px solid #555555; /* Grey border */
+    }
+
+    .navbar-toggler {
+        display: block; /* Show the hamburger toggle button */
+    }
+
+    .navbar-collapse.show {
+        left: 0; /* Slide in when toggled */
+    }
+}
+
+/* For large screens, reset the navbar */
+@media (min-width: 992px) {
+    .navbar-collapse {
+        position: static;
+        width: auto;
+        height: auto;
+    }
+
+    .navbar-toggler {
+        display: none; /* Hide the toggle button on large screens */
+    }
+}
 
 /* General styles */
 body {
@@ -29,7 +242,6 @@ body {
 /* Navbar */
 .navbar {
     background-color: #000000; /* Black navbar */
-    border-bottom: 1px solid #555555; /* Grey border */
     position: sticky; /* Makes the navbar sticky */
     top: 0; /* Sticks the navbar to the top */
     z-index: 1000; /* Ensures the navbar is above other content */
@@ -174,7 +386,6 @@ a:hover {
     border-radius: 8px; /* Optional: Rounded corners */
 }
 
-
 /* Video Background Styling for Shop Page */
 /* Video only in the container */
 .video-container {
@@ -200,7 +411,6 @@ a:hover {
     color: #fff; /* Text visibility */
 }
 
-
 /* Footer Styling */
 footer {
     background-color: black !important; /* Forces the background color to be black */
@@ -208,6 +418,7 @@ footer {
     position: relative; /* Ensures it is not affected by video position */
     z-index: 2; /* Makes sure the footer stays above any background video */
 }
+
 
 
 

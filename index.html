@@ -24,38 +24,48 @@
 </head>
 
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Salt City United</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="chants/">Chants</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="riot/">RIOT</a>
-                    </li>                    
-                    <li class="nav-item">
-                        <a class="nav-link" href="shop/">Store</a>
-                    </li>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Salt City United</a>
+        
+        <!-- Checkbox to control menu visibility -->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox">
+        
+        <!-- Label for the hamburger button -->
+        <label for="menu-toggle" class="navbar-toggler">
+            <span class="navbar-toggler-icon"></span>
+        </label>
 
-                                    <!-- Social Media Links -->
+        <div class="navbar-collapse">
+            <!-- Close Button (X) -->
+            <label for="menu-toggle" class="close-btn">&times;</label>
+
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/chants/">Chants</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/riot/">RIOT</a>
+                </li>                    
+                <li class="nav-item">
+                    <a class="nav-link" href="/shop/">Store</a>
+                </li>
+                
+                <!-- Social Media Links -->
                 <li class="nav-item">
                     <a class="nav-link" href="https://www.instagram.com/saltcityunited?igsh=NTF1d20wa3I2bW55&utm_source=qr" target="_blank" aria-label="Instagram">
                         <i class="fab fa-instagram"></i>
                     </a>
                 </li>
-                </ul>
-            </div>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
+
 
     <!-- Hero Section --> <!-- 
     <header class="text-center py-5">
@@ -92,6 +102,7 @@
 
     <!-- Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 
 
 </body>
